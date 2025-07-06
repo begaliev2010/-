@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8">
+  <title>Фармоиши сомона</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; color: #333; }
+    form { background: white; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    select, textarea, button {
+      width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;
+    }
+    button {
+      background: green; color: white; font-size: 16px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>💻 Фармоиши сомона</h1>
+  <form id="orderForm">
+    <label>📌 Намуди сомона:</label>
+    <select id="type">
+      <option value="Сомонаи мағоза">Сомонаи мағоза</option>
+      <option value="Портфолияи шахсӣ">Портфолияи шахсӣ</option>
+      <option value="Блоги хабарҳо">Блоги хабарҳо</option>
+      <option value="Сомона барои донати Free Fire">Сомона барои донати Free Fire</option>
+      <option value="Дигар">Намуди дигари сомона</option>
+    </select>
+
+    <label>🎨 Дар бораи дизайн:</label>
+    <textarea id="design" rows="4" placeholder="Шакл, ранг, тугмаҳо, анимация ва ғайраҳоро нависед..."></textarea>
+
+    <button type="button" onclick="sendToWhatsApp()">📲 Фиристодан ба WhatsApp</button>
+  </form>
+
+  <script>
+    function sendToWhatsApp() {
+      const type = document.getElementById("type").value;
+      const design = document.getElementById("design").value;
+      const phone = "992031831212"; // Рақами шумо дар WhatsApp
+
+      const message = `Салом! Ба ман сомонаи зерин лозим аст:\n\n🖥 Намуди сомона: ${type}\n🎨 Дизайн: ${design}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
